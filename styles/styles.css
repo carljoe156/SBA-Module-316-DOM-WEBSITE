@@ -1,54 +1,105 @@
-* {
-  box-sizing: border-box;
+/* General Styles */
+body {
+  font-family: "Satisfy", sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  /* font-family: "Satisfy", sans-serif; */
-  background-color: blanchedalmond;
-  color: #fff;
-  font-size: 16px;
+.container {
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
 }
 
 h1 {
   font-size: 3em;
-  text-align: center;
-  padding-top: 1em;
-  font-family: "Satisfy", cursive, "Segoe UI", Tahoma, Geneva, Verdana,
-    sans-serif; /* Assuming "Satisfy" is being loaded correctly */
-  font-weight: 400;
-  font-style: normal;
+  color: #532a7f;
+  margin-bottom: 20px;
 }
 
-/* Google font for "Satisfy" */
-.satisfy-regular {
-  font-family: "Satisfy", cursive; /* Assuming "Satisfy" is being loaded correctly */
-  font-weight: 400;
-  font-style: normal;
+.total {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
-.container {
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 70%;
+  margin-right: 10px;
+  font-size: 1em;
+  border: 2px solid #532a7f;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #532a7f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #8a4fdc;
+}
+
+/* Controls Playlist Styles */
+.playlist {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.song {
+  background-color: white;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
   max-width: 400px;
-  width: 90%;
-  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-input [type="text"] {
-  padding: 0.5em;
-  font-size: 1px;
+.song-title {
+  font-size: 1.2em;
+  color: #532a7f;
+}
+
+.remove-song {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  cursor: pointer;
+  border: none;
   border-radius: 5px;
-  border: 2px solid #fff;
-  background-color: aqua;
-  color: #fff;
 }
 
+.remove-song:hover {
+  background-color: #cc0000;
+}
+
+.hide {
+  display: none;
+}
+
+/* a button control */
 button {
   padding: 0.5em 1.5em;
   font-size: 1.2em;
@@ -63,52 +114,6 @@ button:hover {
   background-color: #7e2dcb;
 }
 
-.playlist {
-  list-style: none;
-  padding: 0 2em;
-  margin: 0;
-  border: 3px solid #fff;
-  border-radius: 5px;
-  margin-bottom: 2em;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.playlist .song {
-  padding: 0.75em;
-  margin: 0.5em 0;
-  font-size: 1.25em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #0f5d91;
-  border-radius: 5px;
-}
-
-.playlist .favorite {
-  cursor: pointer;
-  color: #ffd700;
-}
-
-button.show-list {
-  width: 50%;
-  padding: 1em;
-  background-color: #eebe21;
-  color: #fff;
-}
-
-button.show-list.hide {
-  display: none;
-}
-
-/* Media queries */
-@media screen and (min-width: 800px) {
-  .playlist .song {
-    font-size: 1.5em;
-  }
-
-  button.show-list {
-    width: 25%;
-    font-size: 1.5em;
-  }
+button#shuffle-btn {
+  margin-top: 1em;
 }

@@ -11,26 +11,17 @@
       href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
       rel="stylesheet"
     />
-    <!--Not For the logo-->
-    <!-- <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    /> -->
     <link rel="stylesheet" href="styles/styles.css" />
     <script src="scripts/script.js" defer></script>
   </head>
 
   <body>
     <div class="container">
-      <!--For the logo-->
       <h1><i class="fas fa-compact-disc"></i> Your New Favorite Playlist</h1>
       <p class="total"></p>
 
-      <!-- Hey maybe you want to add a new song here's how to do that -->
+      <!-- Form to add new songs -->
       <form id="add-song-form" action="#" method="post">
-        <!--May add a name bar for personality -->
         <input
           type="text"
           id="new-song"
@@ -40,10 +31,21 @@
         <button type="submit" id="add-song-btn">Add Song</button>
       </form>
 
-      <!-- Shows the user's Song List -->
+      <!-- Get By Mood-based shuffle -->
+      <form id="mood-form">
+        <input
+          type="text"
+          id="mood-input"
+          placeholder="Enter mood (e.g., energetic, chill)"
+          required
+        />
+        <button type="submit" id="shuffle-btn">Shuffle Playlist</button>
+      </form>
+
+      <!-- Lists Playlist -->
       <ul class="playlist hide"></ul>
 
-      <!-- Shows the User's Playlist via button-->
+      <!-- Can show the Playlist -->
       <button class="show-list">Show Playlist</button>
     </div>
   </body>

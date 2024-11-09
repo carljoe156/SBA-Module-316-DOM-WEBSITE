@@ -1,3 +1,4 @@
+//Top 100 Pop Songs, the goal is to iterate through the array and give recommendations
 const epicPlaylist = [
   "Billie Jean - Michael Jackson",
   "Like a Prayer - Madonna",
@@ -125,8 +126,19 @@ const epicPlaylist = [
 ];
 
 const playlistElement = document.querySelector(".playlist");
+
 const addSongBtn = document.getElementById("add-song-btn");
+
 const songInput = document.getElementById("new-song");
+
 const totalSongsText = document.querySelector(".total");
+
 const showListBtn = document.querySelector(".show-list");
+
+const moodInput = document.getElementById("mood-input");
+
+const shuffleBtn = document.getElementById("shuffle-btn");
+
 const form = document.getElementById("add-song-form");
+
+const moodForm = document.getElementById("mood-form");
