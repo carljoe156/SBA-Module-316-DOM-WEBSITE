@@ -10,13 +10,13 @@ body {
   /* font-family: "Satisfy", sans-serif; */
   background-color: blanchedalmond;
   color: #fff;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 3em;
   text-align: center;
-  padding-top: 13px;
+  padding-top: 1em;
   font-family: "Satisfy", cursive, "Segoe UI", Tahoma, Geneva, Verdana,
     sans-serif; /* Assuming "Satisfy" is being loaded correctly */
   font-weight: 400;
@@ -41,10 +41,74 @@ h1 {
 }
 
 input [type="text"] {
-  padding: 0.5px;
+  padding: 0.5em;
   font-size: 1px;
   border-radius: 5px;
   border: 2px solid #fff;
   background-color: aqua;
   color: #fff;
+}
+
+button {
+  padding: 0.5em 1.5em;
+  font-size: 1.2em;
+  background-color: #9634ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #7e2dcb;
+}
+
+.playlist {
+  list-style: none;
+  padding: 0 2em;
+  margin: 0;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.playlist .song {
+  padding: 0.75em;
+  margin: 0.5em 0;
+  font-size: 1.25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f5d91;
+  border-radius: 5px;
+}
+
+.playlist .favorite {
+  cursor: pointer;
+  color: #ffd700;
+}
+
+button.show-list {
+  width: 50%;
+  padding: 1em;
+  background-color: #eebe21;
+  color: #fff;
+}
+
+button.show-list.hide {
+  display: none;
+}
+
+/* Media queries */
+@media screen and (min-width: 800px) {
+  .playlist .song {
+    font-size: 1.5em;
+  }
+
+  button.show-list {
+    width: 25%;
+    font-size: 1.5em;
+  }
 }
