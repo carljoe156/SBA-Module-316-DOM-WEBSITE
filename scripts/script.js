@@ -142,3 +142,131 @@ const shuffleBtn = document.getElementById("shuffle-btn");
 const form = document.getElementById("add-song-form");
 
 const moodForm = document.getElementById("mood-form");
+
+let playlist = [...epicPlaylist];
+
+// A song event listener
+addSongBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  const newSong = songInput.value.trim();
+  if (newSong) {
+    epicPlaylist.push(newSong); // Add new song to the playlist
+    songInput.value = ""; // Clear input field after a song is placed
+    updatePlaylist();
+    updateSongCount();
+  }
+});
+
+// Show/hide playlist
+showListBtn.addEventListener("click", function () {
+  playlistElement.classList.toggle("hide");
+  if (playlistElement.classList.contains("hide")) {
+    showListBtn.textContent = "Show Playlist";
+  } else {
+    showListBtn.textContent = "Hide Playlist";
+  }
+});
+
+// Shuffle playlist based on mood
+moodForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const mood = moodInput.value.trim().toLowerCase();
+
+  if (!mood) {
+    alert("Please enter a mood.");
+    return;
+  }
+
+  try {
+    switch (mood) {
+      case "energetic":
+        shufflePlaylist(true); // Shuffle randomly for energetic mood
+        break;
+      case "chill":
+        shufflePlaylist(false); // Shuffle slower for chill mood
+        break;
+      case "happy":
+        playlist = playlist.filter((song) => isUpbeat(song)); // Filter upbeat songs
+        shufflePlaylist(true); // Shuffle upbeat songs
+        break;
+      case "sad":
+        playlist = playlist.filter((song) => isSad(song)); // Filter sad songs
+        shufflePlaylist(false); // Shuffle slower for sad mood
+        break;
+      case "mindful-demure":
+        playlist = playlist.filter((song) => isMindful(song)); // Filter calming songs
+        playlist.sort((a, b) => a.localeCompare(b)); // This can sort the moods alphabetically
+        break;
+      default:
+        alert(
+          "Please enter a valid mood (e.g., energetic, chill, happy, sad, mindful-demure)."
+        );
+        return; // Exit if the mood is invalid
+    }
+    updatePlaylist();
+    updateSongCount();
+  } catch (error) {
+    console.error("An error occurred while processing the mood:", error);
+    alert("The Vibes are off! Please try again.");
+  }
+});
+
+// Remove song from the playlist
+function removeSong(index) {
+  epicPlaylist.splice(index, 1); // Remove song at index
+  updatePlaylist();
+  updateSongCount();
+}
+
+// Shuffle the playlist (randomize order or prioritize based on mood)
+function shufflePlaylist(isEnergetic) {
+  if (playlist.length === 0) {
+    alert("The playlist is empty, cannot shuffle.");
+    return;
+  }
+
+  try {
+    if (isEnergetic) {
+      playlist.sort(() => Math.random() - 0.5); // Fast shuffle
+    } else {
+      playlist.sort(() => Math.random() - 0.2); // Slow shuffle
+    }
+  } catch (error) {
+    console.error("Error occurred while shuffling the playlist:", error);
+    alert("Shuffling Vibes Vibes are off. Please try again.");
+  }
+}
+
+//can help with song counter, a song counter if you will
+function updateSongCount() {
+  totalSongsText.innerText = `${playlist.length} great songs!`;
+}
+
+// Update the displayed playlist
+function updatePlaylist() {
+  playlistElement.innerHTML = ""; // Clear current list
+  epicPlaylist.forEach((song, index) => {
+    const songItem = document.createElement("li");
+    songItem.classList.add("song");
+    songItem.textContent = song;
+
+    // Add Remove Button
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.classList.add("remove-btn");
+    removeBtn.addEventListener("click", function () {
+      removeSong(index);
+    });
+
+    songItem.appendChild(removeBtn);
+    playlistElement.appendChild(songItem);
+  });
+}
+
+function updateSongCount() {
+  totalSongsText.textContent = `Total Songs: ${epicPlaylist.length}`;
+}
+
+// Initialize playlist
+updatePlaylist();
+updateSongCount();
