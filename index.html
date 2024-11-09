@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Epic Music Playlist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <!--Not For the logo-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="scripts/script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!--For the logo-->
+      <h1><i class="fas fa-compact-disc"></i> Your New Favorite Playlist</h1>
+      <p class="total"></p>
+
+      <!-- Hey maybe you want to add a new song here's how to do that -->
+      <form id="add-song-form" action="#" method="post">
+        <!--May add a name bar for personality -->
+        <input
+          type="text"
+          id="new-song"
+          placeholder="Add a new song"
+          required
+        />
+        <button type="submit" id="add-song-btn">Add Song</button>
+      </form>
+
+      <!-- Shows the user's Song List -->
+      <ul class="playlist hide"></ul>
+
+      <!-- Shows the User's Playlist via button-->
+      <button class="show-list">Show Playlist</button>
+    </div>
+  </body>
+</html>
