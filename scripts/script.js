@@ -140,7 +140,45 @@ const moodForm = document.getElementById("mood-form");
 
 const moodInput = document.getElementById("mood-input");
 
+const nameForm = document.getElementById("name-form");
+const userNameInput = document.getElementById("user-name");
+const changeNameBtn = document.getElementById("change-name-btn");
+const welcomeMessage = document.querySelector(".welcome-message");
+
+let userName = "";
 let playlist = [...epicPlaylist];
+
+// For the Your Name form submission
+// const nameForm = document.getElementById("name-form");
+// const userNameInput = document.getElementById("user-name");
+// const changeNameBtn = document.getElementById("change-name-btn");
+// const welcomeMessage = document.querySelector(".welcome-message");
+// //let userName = "";
+
+nameForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const userName = userNameInput.value.trim(); //displays the user when they put their name
+  if (userName) {
+    alert(`Welcome to Your Playlist, ${userName}!`); // Alerts and stuff
+    welcomeMessage.innerHTML = `Welcome to Your New Playlist, ${userName}!`;
+    nameForm.style.display = "none"; // also once logged hide it
+    changeNameBtn.style.display = "inline-block"; // Let's change our names, sometimes
+    userNameInput.value = ""; //wanted to clear the field was logged
+    // alert("Please enter your name.");
+    // welcomeMessage.innerHTML = `Welcome to Your New Playlist, ${userName}!`;
+    // changeNameBtn.style.display = "inline-block"; // Let's change our names, sometimes
+  } else {
+    alert("Hey, Please enter your name.");
+  }
+});
+
+changeNameBtn.addEventListener("click", function () {
+  nameForm.style.display = "block";
+  welcomeMessage.innerHTML = "";
+  changeNameBtn.style.display = "none";
+});
+
+//let playlist = [...epicPlaylist];
 
 // A song event listener/
 showListBtn.addEventListener("click", function (event) {
@@ -152,12 +190,13 @@ showListBtn.addEventListener("click", function (event) {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const newSongTitle = songInput.value.trim();
+  const newSong = songInput.value.trim();
   //const artist = document.getElementById("new-artist").value.trim();
   //const artist "Unknown Artist";
 
   if (newSong && !playlist.includes(newSong)) {
     playlist.push(newSong);
+    console.log("Updated Vibes Playlist:", playlist);
     songInput.value = "";
     updatePlaylist();
     updateSongCount();
@@ -211,7 +250,7 @@ moodForm.addEventListener("submit", function (event) {
   }
 });
 
-// Helper functions to filter songs by mood
+// Helper functions to filter songs by mood, you know if you wanted
 function isUpbeat(song) {
   const upbeatKeywords = ["happy", "dance", "joy", "fun", "party"];
   return upbeatKeywords.some((keyword) => song.toLowerCase().includes(keyword));
@@ -264,7 +303,7 @@ function updatePlaylist() {
     return;
   }
 
-  // Use DocumentFragment to avoid multiple DOM reflows
+  // Using DocumentFragment to avoid multiple DOM re-flows
   const fragment = document.createDocumentFragment();
   playlist.forEach((song, index) => {
     const li = document.createElement("li");
@@ -293,3 +332,23 @@ function removeSong(event) {
 
 // Initial playlist render
 updatePlaylist();
+
+const firstSong = playlistElement.firstChild;
+if (firstSong && firstSong.nodeType === 1) {
+  firstSong.style.color = "green";
+}
+
+const lastSong = playlistElement.lastChild;
+if (lastSong && lastSong.nodeType === 1) {
+  const customNote = document.createElement("span");
+  customNote.textContent = " (Last song in playlist)";
+  lastSong.appendChild(customNote);
+}
+const nextSibling = firstSong ? firstSong.nextElementSibling : null;
+if (nextSibling) {
+  nextSibling.style.backgroundColor = "#f0f0f0";
+}
+const parentNode = firstSong ? firstSong.parentNode : null;
+if (parentNode) {
+  parentNode.style.border = "2px solid #ccc";
+}
