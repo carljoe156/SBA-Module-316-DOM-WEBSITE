@@ -1,128 +1,134 @@
 //Top 100 Pop Songs, the goal is to iterate through the array and give recommendations
 const epicPlaylist = [
-  "Billie Jean - Michael Jackson",
-  "Like a Prayer - Madonna",
-  "I Wanna Dance with Somebody - Whitney Houston",
-  "Thriller - Michael Jackson",
-  "Stayin' Alive - Bee Gees",
-  "Uptown Girl - Billy Joel",
-  "Toxic - Britney Spears",
-  "Rolling in the Deep - Adele",
-  "Call Me Maybe - Carly Rae Jepsen",
-  "Don't Stop Believin' - Journey",
-  "Shape of You - Ed Sheeran",
-  "Roar - Katy Perry",
-  "Happy - Pharrell Williams",
-  "Blinding Lights - The Weeknd",
-  "Just the Way You Are - Bruno Mars",
-  "Smooth - Santana ft. Rob Thomas",
-  "Poker Face - Lady Gaga",
-  "Wannabe - Spice Girls",
-  "Havana - Camila Cabello ft. Young Thug",
-  "Firework - Katy Perry",
-  "Umbrella - Rihanna ft. Jay-Z",
-  "Livin' La Vida Loca - Ricky Martin",
-  "I Will Always Love You - Whitney Houston",
-  "No Scrubs - TLC",
-  "Vogue - Madonna",
-  "Teenage Dream - Katy Perry",
-  "My Heart Will Go On - Celine Dion",
-  "Bailamos - Enrique Iglesias",
-  "Creep - Radiohead",
-  "I Want It That Way - Backstreet Boys",
-  "Can't Stop the Feeling! - Justin Timberlake",
-  "Shake It Off - Taylor Swift",
-  "A Thousand Miles - Vanessa Carlton",
-  "Bleeding Love - Leona Lewis",
-  "Mr. Brightside - The Killers",
-  "Let Me Love You - Mario",
-  "Girls Just Want to Have Fun - Cyndi Lauper",
-  "All Star - Smash Mouth",
-  "Take a Bow - Rihanna",
-  "I Don't Want to Miss a Thing - Aerosmith",
-  "Bohemian Rhapsody - Queen",
-  "Waiting for Tonight - Jennifer Lopez",
-  "Irreplaceable - Beyoncé",
-  "The Sign - Ace of Base",
-  "Man! I Feel Like a Woman - Shania Twain",
-  "Single Ladies (Put a Ring on It) - Beyoncé",
-  "Wonderwall - Oasis",
-  "No One - Alicia Keys",
-  "Back to December - Taylor Swift",
-  "Let It Go - Idina Menzel (from *Frozen*)",
-  "Call on Me - Eric Prydz",
-  "Savage Love - Jawsh 685 x Jason Derulo",
-  "Levitating - Dua Lipa",
-  "New Rules - Dua Lipa",
-  "Truth Hurts - Lizzo",
-  "Blowin' in the Wind - Bob Dylan",
-  "Take Me to Church - Hozier",
-  "Fight Song - Rachel Platten",
-  "Chandelier - Sia",
-  "Old Town Road - Lil Nas X",
-  "Royals - Lorde",
-  "Don't Start Now - Dua Lipa",
-  "Good 4 U - Olivia Rodrigo",
-  "Shallow - Lady Gaga & Bradley Cooper",
-  "We Belong Together - Mariah Carey",
-  "I'm Your Angel - R. Kelly & Celine Dion",
-  "Fighter - Christina Aguilera",
-  "One Kiss - Calvin Harris & Dua Lipa",
-  "Stay - The Kid LAROI & Justin Bieber",
-  "Dancing Queen - ABBA",
-  "If I Ain't Got You - Alicia Keys",
-  "I Want You Back - *NSYNC",
-  "All of Me - John Legend",
-  "Livin' on a Prayer - Bon Jovi",
-  "Tearin' Up My Heart - *NSYNC",
-  "Uptown Funk - Mark Ronson ft. Bruno Mars",
-  "Mambo No. 5 - Lou Bega",
-  "I Gotta Feeling - The Black Eyed Peas",
-  "Torn - Natalie Imbruglia",
-  "Kiss Me - Sixpence None the Richer",
-  "Bad Romance - Lady Gaga",
-  "Jolene - Dolly Parton",
-  "Run the World (Girls) - Beyoncé",
-  "Take It Easy - Eagles",
-  "Boys Don't Cry - The Cure",
-  "Sugar - Maroon 5",
-  "Hips Don't Lie - Shakira ft. Wyclef Jean",
-  "Let's Get It Started - The Black Eyed Peas",
-  "Ain't No Mountain High Enough - Marvin Gaye & Tammi Terrell",
-  "Wrecking Ball - Miley Cyrus",
-  "Tik Tok - Kesha",
-  "Radioactive - Imagine Dragons",
-  "Criminal - Fiona Apple",
-  "Dilemma - Nelly ft. Kelly Rowland",
-  "Bleeding Love - Leona Lewis",
-  "Crazy in Love - Beyoncé ft. Jay-Z",
-  "Killing Me Softly with His Song - The Fugees",
-  "Royals - Lorde",
-  "Sweet Caroline - Neil Diamond",
-  "Don't Let Me Down - The Chainsmokers ft. Daya",
-  "Good as Hell - Lizzo",
-  "Pompeii - Bastille",
-  "How Will I Know - Whitney Houston",
-  "Wake Me Up Before You Go-Go - Wham!",
-  "Teenage Dirtbag - Wheatus",
-  "I Believe I Can Fly - R. Kelly",
-  "SexyBack - Justin Timberlake",
-  "All the Small Things - Blink-182",
-  "Shake It - Metro Station",
-  "Bleeding Love - Leona Lewis",
-  "Shout - The Isley Brothers",
-  "Lady Marmalade - Christina Aguilera, Lil' Kim, Mýa & Pink",
-  "Don't Speak - No Doubt",
-  "I’m a Believer - The Monkees",
-  "Can't Feel My Face - The Weeknd",
-  "Rude - MAGIC!",
-  "La La La - Naughty Boy ft. Sam Smith",
-  "It's My Life - Bon Jovi",
-  "The Way You Make Me Feel - Michael Jackson",
-  "Hot Stuff - Donna Summer",
-  "Funky Town - Lipps Inc.",
-  "With or Without You - U2",
-  "Hard to Handle - The Black Crowes",
+  { title: "Billie Jean", artist: "Michael Jackson" },
+  { title: "Like a Prayer", artist: "Madonna" },
+  { title: "I Wanna Dance with Somebody", artist: "Whitney Houston" },
+  { title: "Thriller", artist: "Michael Jackson" },
+  { title: "Stayin' Alive", artist: "Bee Gees" },
+  { title: "Uptown Girl", artist: "Billy Joel" },
+  { title: "Toxic", artist: "Britney Spears" },
+  { title: "Rolling in the Deep", artist: "Adele" },
+  { title: "Call Me Maybe", artist: "Carly Rae Jepsen" },
+  { title: "Don't Stop Believin'", artist: "Journey" },
+  { title: "Shape of You", artist: "Ed Sheeran" },
+  { title: "Roar", artist: "Katy Perry" },
+  { title: "Happy", artist: "Pharrell Williams" },
+  { title: "Blinding Lights", artist: "The Weeknd" },
+  { title: "Just the Way You Are", artist: "Bruno Mars" },
+  { title: "Smooth", artist: "Santana ft. Rob Thomas" },
+  { title: "Poker Face", artist: "Lady Gaga" },
+  { title: "Wannabe", artist: "Spice Girls" },
+  { title: "Havana", artist: "Camila Cabello ft. Young Thug" },
+  { title: "Firework", artist: "Katy Perry" },
+  { title: "Umbrella", artist: "Rihanna ft. Jay-Z" },
+  { title: "Livin' La Vida Loca", artist: "Ricky Martin" },
+  { title: "I Will Always Love You", artist: "Whitney Houston" },
+  { title: "No Scrubs", artist: "TLC" },
+  { title: "Vogue", artist: "Madonna" },
+  { title: "Teenage Dream", artist: "Katy Perry" },
+  { title: "My Heart Will Go On", artist: "Celine Dion" },
+  { title: "Bailamos", artist: "Enrique Iglesias" },
+  { title: "Creep", artist: "Radiohead" },
+  { title: "I Want It That Way", artist: "Backstreet Boys" },
+  { title: "Can't Stop the Feeling!", artist: "Justin Timberlake" },
+  { title: "Shake It Off", artist: "Taylor Swift" },
+  { title: "A Thousand Miles", artist: "Vanessa Carlton" },
+  { title: "Bleeding Love", artist: "Leona Lewis" },
+  { title: "Mr. Brightside", artist: "The Killers" },
+  { title: "Let Me Love You", artist: "Mario" },
+  { title: "Girls Just Want to Have Fun", artist: "Cyndi Lauper" },
+  { title: "All Star", artist: "Smash Mouth" },
+  { title: "Take a Bow", artist: "Rihanna" },
+  { title: "I Don't Want to Miss a Thing", artist: "Aerosmith" },
+  { title: "Bohemian Rhapsody", artist: "Queen" },
+  { title: "Waiting for Tonight", artist: "Jennifer Lopez" },
+  { title: "Irreplaceable", artist: "Beyoncé" },
+  { title: "The Sign", artist: "Ace of Base" },
+  { title: "Man! I Feel Like a Woman", artist: "Shania Twain" },
+  { title: "Single Ladies (Put a Ring on It)", artist: "Beyoncé" },
+  { title: "Wonderwall", artist: "Oasis" },
+  { title: "No One", artist: "Alicia Keys" },
+  { title: "Back to December", artist: "Taylor Swift" },
+  { title: "Let It Go", artist: "Idina Menzel (from *Frozen*)" },
+  { title: "Call on Me", artist: "Eric Prydz" },
+  { title: "Savage Love", artist: "Jawsh 685 x Jason Derulo" },
+  { title: "Levitating", artist: "Dua Lipa" },
+  { title: "New Rules", artist: "Dua Lipa" },
+  { title: "Truth Hurts", artist: "Lizzo" },
+  { title: "Blowin' in the Wind", artist: "Bob Dylan" },
+  { title: "Take Me to Church", artist: "Hozier" },
+  { title: "Fight Song", artist: "Rachel Platten" },
+  { title: "Chandelier", artist: "Sia" },
+  { title: "Old Town Road", artist: "Lil Nas X" },
+  { title: "Royals", artist: "Lorde" },
+  { title: "Don't Start Now", artist: "Dua Lipa" },
+  { title: "Good 4 U", artist: "Olivia Rodrigo" },
+  { title: "Shallow", artist: "Lady Gaga & Bradley Cooper" },
+  { title: "We Belong Together", artist: "Mariah Carey" },
+  { title: "I'm Your Angel", artist: "R. Kelly & Celine Dion" },
+  { title: "Fighter", artist: "Christina Aguilera" },
+  { title: "One Kiss", artist: "Calvin Harris & Dua Lipa" },
+  { title: "Stay", artist: "The Kid LAROI & Justin Bieber" },
+  { title: "Dancing Queen", artist: "ABBA" },
+  { title: "If I Ain't Got You", artist: "Alicia Keys" },
+  { title: "I Want You Back", artist: "*NSYNC" },
+  { title: "All of Me", artist: "John Legend" },
+  { title: "Livin' on a Prayer", artist: "Bon Jovi" },
+  { title: "Tearin' Up My Heart", artist: "*NSYNC" },
+  { title: "Uptown Funk", artist: "Mark Ronson ft. Bruno Mars" },
+  { title: "Mambo No. 5", artist: "Lou Bega" },
+  { title: "I Gotta Feeling", artist: "The Black Eyed Peas" },
+  { title: "Torn", artist: "Natalie Imbruglia" },
+  { title: "Kiss Me", artist: "Sixpence None the Richer" },
+  { title: "Bad Romance", artist: "Lady Gaga" },
+  { title: "Jolene", artist: "Dolly Parton" },
+  { title: "Run the World (Girls)", artist: "Beyoncé" },
+  { title: "Take It Easy", artist: "Eagles" },
+  { title: "Boys Don't Cry", artist: "The Cure" },
+  { title: "Sugar", artist: "Maroon 5" },
+  { title: "Hips Don't Lie", artist: "Shakira ft. Wyclef Jean" },
+  { title: "Let's Get It Started", artist: "The Black Eyed Peas" },
+  {
+    title: "Ain't No Mountain High Enough",
+    artist: "Marvin Gaye & Tammi Terrell",
+  },
+  { title: "Wrecking Ball", artist: "Miley Cyrus" },
+  { title: "Tik Tok", artist: "Kesha" },
+  { title: "Radioactive", artist: "Imagine Dragons" },
+  { title: "Criminal", artist: "Fiona Apple" },
+  { title: "Dilemma", artist: "Nelly ft. Kelly Rowland" },
+  { title: "Bleeding Love", artist: "Leona Lewis" },
+  { title: "Crazy in Love", artist: "Beyoncé ft. Jay-Z" },
+  { title: "Killing Me Softly with His Song", artist: "The Fugees" },
+  { title: "Royals", artist: "Lorde" },
+  { title: "Sweet Caroline", artist: "Neil Diamond" },
+  { title: "Don't Let Me Down", artist: "The Chainsmokers ft. Daya" },
+  { title: "Good as Hell", artist: "Lizzo" },
+  { title: "Pompeii", artist: "Bastille" },
+  { title: "How Will I Know", artist: "Whitney Houston" },
+  { title: "Wake Me Up Before You Go-Go", artist: "Wham!" },
+  { title: "Teenage Dirtbag", artist: "Wheatus" },
+  { title: "I Believe I Can Fly", artist: "R. Kelly" },
+  { title: "SexyBack", artist: "Justin Timberlake" },
+  { title: "All the Small Things", artist: "Blink-182" },
+  { title: "Shake It", artist: "Metro Station" },
+  { title: "Bleeding Love", artist: "Leona Lewis" },
+  { title: "Shout", artist: "The Isley Brothers" },
+  {
+    title: "Lady Marmalade",
+    artist: "Christina Aguilera, Lil' Kim, Mýa & Pink",
+  },
+  { title: "Don't Speak", artist: "No Doubt" },
+  { title: "I’m a Believer", artist: "The Monkees" },
+  { title: "Can't Feel My Face", artist: "The Weeknd" },
+  { title: "Rude", artist: "MAGIC!" },
+  { title: "La La La", artist: "Naughty Boy ft. Sam Smith" },
+  { title: "It's My Life", artist: "Bon Jovi" },
+  { title: "The Way You Make Me Feel", artist: "Michael Jackson" },
+  { title: "Hot Stuff", artist: "Donna Summer" },
+  { title: "Funky Town", artist: "Lipps Inc." },
+  { title: "With or Without You", artist: "U2" },
+  { title: "Hard to Handle", artist: "The Black Crowes" },
 ];
 
 const playlistElement = document.querySelector(".playlist");
@@ -143,18 +149,40 @@ const form = document.getElementById("add-song-form");
 
 const moodForm = document.getElementById("mood-form");
 
+const artistInput = document.getElementById("artist-input");
+
 let playlist = [...epicPlaylist];
 
-// A song event listener
+// A song event listener/
 addSongBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  const newSong = songInput.value.trim();
-  if (newSong) {
-    epicPlaylist.push(newSong); // Add new song to the playlist
-    songInput.value = ""; // Clear input field after a song is placed
-    updatePlaylist();
-    updateSongCount();
+  const newSongTitle = songInput.value.trim();
+  const artist = artistInput.value.trim();
+  //const artist "Unknown Artist";
+
+  if (!newSongTitle || !artist) {
+    alert("Please enter both a song title and artist.");
+    return;
   }
+  const songExists = epicPlaylist.some(
+    (song) =>
+      song.title.toLowerCase() === newSongTitle.toLowerCase() &&
+      song.artist.toLowerCase() === artist.toLowerCase()
+  );
+
+  if (songExists) {
+    alert("This song is already in the Vibes playlist.");
+    songInput.value = ""; // Optionally clear the input field if the song exists
+    artistInput.value = "";
+    return; // Exit without adding the song
+  }
+  epicPlaylist.push({ title: newSongTitle, artist: artist });
+  alert("This song is now in the vibes playlist"); // Add new song to the playlist
+  songInput.value = ""; // Clear input field after a song is placed
+  //so it playlist should skip if song already exists
+  updatePlaylist();
+  updateSongCount();
+  console.log("Added New Song:", { title: newSongTitle, artist: artist });
 });
 
 // Show/hide playlist
@@ -171,7 +199,7 @@ showListBtn.addEventListener("click", function () {
 moodForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const mood = moodInput.value.trim().toLowerCase();
-
+  console.log(`Mood input: ${mood}`);
   if (!mood) {
     alert("Please enter a mood.");
     return;
@@ -216,6 +244,7 @@ function removeSong(index) {
   epicPlaylist.splice(index, 1); // Remove song at index
   updatePlaylist();
   updateSongCount();
+  console.log(`Removed song:${index}`);
 }
 
 // Shuffle the playlist (randomize order or prioritize based on mood)
@@ -248,9 +277,9 @@ function updatePlaylist() {
   epicPlaylist.forEach((song, index) => {
     const songItem = document.createElement("li");
     songItem.classList.add("song");
-    songItem.textContent = song;
+    songItem.textContent = `${song.title} - ${song.artist}`;
 
-    // Add Remove Button
+    // Adds Remove Button, Helps clean up a bit
     const removeBtn = document.createElement("button");
     removeBtn.textContent = "Remove";
     removeBtn.classList.add("remove-btn");
@@ -263,6 +292,13 @@ function updatePlaylist() {
   });
 }
 
+function removeSong(index) {
+  epicPlaylist.splice(index, 1);
+  updatePlaylist();
+  updateSongCount();
+  console.log(`Removed song:${index}`);
+}
+
 function updateSongCount() {
   totalSongsText.textContent = `Total Songs: ${epicPlaylist.length}`;
 }
@@ -270,3 +306,5 @@ function updateSongCount() {
 // Initialize playlist
 updatePlaylist();
 updateSongCount();
+
+// Validating forms
