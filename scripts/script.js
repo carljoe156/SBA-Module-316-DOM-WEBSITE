@@ -141,12 +141,25 @@ const moodForm = document.getElementById("mood-form");
 const moodInput = document.getElementById("mood-input");
 
 const nameForm = document.getElementById("name-form");
+
 const userNameInput = document.getElementById("user-name");
+
 const changeNameBtn = document.getElementById("change-name-btn");
+
 const welcomeMessage = document.querySelector(".welcome-message");
 
-let userName = "";
+const originalPlaylist = [...epicPlaylist]; //Just learned about a Shallow copy, so I'm implementing here.
 let playlist = [...epicPlaylist];
+
+function resetPlaylist() {
+  playlist = [...originalPlaylist];
+  updatePlaylist();
+  updateSongCount();
+}
+const resetBtn = document.getElementById("reset-playlist-btn");
+resetBtn.addEventListener("click", resetPlaylist);
+
+let userName = "";
 
 // For the Your Name form submission
 // const nameForm = document.getElementById("name-form");
