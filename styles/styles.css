@@ -8,6 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 .container {
@@ -40,6 +41,10 @@ input {
   border-radius: 5px;
 }
 
+input:focus {
+  border-color: #8a4fdc; /*Do this or else*/
+}
+
 button {
   padding: 10px 15px;
   font-size: 1em;
@@ -54,7 +59,7 @@ button:hover {
   background-color: #8a4fdc;
 }
 
-/* Controls Playlist Styles */
+/* Controls Playlist  */
 .playlist {
   display: flex;
   flex-direction: column;
@@ -116,4 +121,52 @@ button:hover {
 
 button#shuffle-btn {
   margin-top: 1em;
+}
+
+/*Footer information*/
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  border-top: 2px solid #ccc;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+.footer .phone {
+  margin-bottom: 10px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/*Razzle Dazzle*/
+
+.footer p {
+  color: #555;
+}
+
+/* Media Queries Section */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .song-title {
+    font-size: 1em;
+  }
 }

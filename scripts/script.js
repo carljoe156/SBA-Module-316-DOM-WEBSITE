@@ -352,3 +352,100 @@ const parentNode = firstSong ? firstSong.parentNode : null;
 if (parentNode) {
   parentNode.style.border = "2px solid #ccc";
 }
+
+//Validations and Such
+//Name
+function validateName() {
+  let nameVal = userNameInput.value.trim();
+  if (nameVal.length === 0) {
+    alert("Your name cannot be empty."); //Uh maybe you should add your name here
+    userNameInput.focus(); //FOCUS
+    return false;
+  }
+  return nameVal;
+}
+//Songs
+function ValidateSong() {
+  const songVal = songInput.value.trim();
+  if (songVal.length === 0) {
+    alert("Song name cannot be empty."); //Who doesn't like Music
+    songInput.focus();
+    return false;
+  }
+  if (songVal.length < 3) {
+    alert("Song name must be at least 4 characters long."); // Songs are longer than 4 characters you know
+    songInput.focus();
+    return false;
+  }
+  return songVal;
+}
+
+//Mood
+function validateMood() {
+  const moodVal = moodInput.value.trim().toLowerCase();
+  const validMoods = ["energetic", "chill", "happy", "sad", "mindful-demure"];
+
+  if (!moodVal) {
+    alert("Please enter a mood.");
+    moodInput.focus();
+    return false;
+  }
+
+  if (!validMoods.includes(moodVal)) {
+    alert("Invalid mood. Try: energetic, chill, happy, sad, mindful-demure.");
+    moodInput.focus();
+    return false;
+  }
+
+  return moodVal;
+}
+
+moodForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const mood = validateMood();
+  if (mood) shufflePlaylistByMood(mood);
+});
+
+function shufflePlaylistByMood(mood) {
+  switch (mood) {
+    case "energetic":
+      shufflePlaylist(true);
+      break;
+    case "chill":
+      shufflePlaylist(false);
+      break;
+    case "happy":
+      playlist = playlist.filter(isUpbeat);
+      shufflePlaylist(true);
+      break;
+    case "sad":
+      playlist = playlist.filter(isSad);
+      shufflePlaylist(false);
+      break;
+    case "mindful-demure":
+      playlist = playlist.filter(isMindful);
+      playlist.sort();
+      break;
+    default:
+      alert("Invalid mood");
+      return;
+  }
+  updatePlaylist();
+  updateSongCount();
+}
+
+// Helper functions for mood-based filtering, I've been thinking maybe expand the functionality a bit, this is too long though
+function isUpbeat(song) {
+  return /happy|dance|joy|fun|party/.test(song.toLowerCase());
+}
+function isSad(song) {
+  return /sad|cry|hurt|tears/.test(song.toLowerCase());
+}
+function isMindful(song) {
+  return /calm|peace|quiet/.test(song.toLowerCase());
+}
+
+function shufflePlaylist(isEnergetic) {
+  playlist.sort(() => Math.random() - (isEnergetic ? 0.5 : 0.2));
+}
