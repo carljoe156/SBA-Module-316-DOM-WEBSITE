@@ -180,6 +180,8 @@ nameForm.addEventListener("submit", function (event) {
     nameForm.style.display = "none"; // also once logged hide it
     changeNameBtn.style.display = "inline-block"; // Let's change our names, sometimes
     userNameInput.value = ""; //wanted to clear the field was logged
+
+    triggerConfetti();
   } else {
     alert("Hey, Please enter your name.");
   }
@@ -190,6 +192,13 @@ changeNameBtn.addEventListener("click", function () {
   welcomeMessage.innerHTML = "";
   changeNameBtn.style.display = "none";
 });
+function triggerConfetti() {
+  confetti({
+    particleCount: 1000,
+    spread: 2000,
+    origin: { y: 0.6 },
+  });
+}
 
 // A song event listener, Toggles the button action
 showListBtn.addEventListener("click", function (event) {
@@ -267,7 +276,7 @@ moodForm.addEventListener("submit", function (event) {
   }
 });
 
-// Helper functions to filter songs by mood, you know if you wanted
+// Helper functions to filter songs by mood, you know if you wanted/ W.I.P
 function isUpbeat(song) {
   const upbeatKeywords = ["happy", "dance", "joy", "fun", "party"];
   return upbeatKeywords.some((keyword) => song.toLowerCase().includes(keyword));

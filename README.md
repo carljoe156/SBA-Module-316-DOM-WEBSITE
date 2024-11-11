@@ -7,7 +7,7 @@
 - Demonstrate proficiency with event-driven programming and DOM events.
 - Implement basic form validation using any combination of built-in HTML validation attributes and DOM-event-driven JavaScript validation.
 
-## Your New Favorite Playlist
+## Your New Favorite Playlist!
 
 Welcome to 'Your New Favorite Playlist', that right YOU ,your personal jukebox for the soul! 🎶 This fun and interactive web app lets you:
 

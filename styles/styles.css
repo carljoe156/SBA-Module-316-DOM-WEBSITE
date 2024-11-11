@@ -59,7 +59,7 @@ button:hover {
   background-color: #8a4fdc;
 }
 
-/* Controls Playlist  */
+/* Controls Playlist */
 .playlist {
   display: flex;
   flex-direction: column;
