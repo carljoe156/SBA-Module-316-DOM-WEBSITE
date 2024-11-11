@@ -191,12 +191,16 @@ changeNameBtn.addEventListener("click", function () {
   changeNameBtn.style.display = "none";
 });
 
-//let playlist = [...epicPlaylist];
-
-// A song event listener/
+// A song event listener, Toggles the button action
 showListBtn.addEventListener("click", function (event) {
   playlistElement.classList.toggle("hide");
-  showListBtn.classList.toggle("hide");
+  if (playlistElement.classList.contains("hide")) {
+    showListBtn.textContent = "Show Playlist";
+  } else {
+    showListBtn.textContent = "Hide Playlist";
+  }
+
+  //showListBtn.classList.toggle("hide");
 });
 
 // Add song to playlist

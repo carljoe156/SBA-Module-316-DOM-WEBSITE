@@ -66,6 +66,9 @@ button:hover {
   align-items: center;
   padding: 20px;
   gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: "Titillium", sans-serif;
 }
 
 .song {
@@ -84,6 +87,7 @@ button:hover {
 .song-title {
   font-size: 1.2em;
   color: #532a7f;
+  font-family: "Titillium", sans-serif;
 }
 
 .remove-song {
@@ -163,7 +167,7 @@ body {
 /* Media Queries Section */
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   .song-title {
