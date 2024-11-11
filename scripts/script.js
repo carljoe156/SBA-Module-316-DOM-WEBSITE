@@ -157,7 +157,16 @@ function resetPlaylist() {
   updateSongCount();
 }
 const resetBtn = document.getElementById("reset-playlist-btn");
-resetBtn.addEventListener("click", resetPlaylist);
+
+resetBtn.addEventListener("click", function () {
+  const isConfirmed = window.confirm(
+    "Are you sure you want to reset the playlist?"
+  );
+
+  if (isConfirmed) {
+    resetPlaylist();
+  }
+});
 
 // For User names
 let userName = "";
