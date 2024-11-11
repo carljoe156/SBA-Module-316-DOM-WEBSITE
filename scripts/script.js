@@ -159,27 +159,18 @@ function resetPlaylist() {
 const resetBtn = document.getElementById("reset-playlist-btn");
 resetBtn.addEventListener("click", resetPlaylist);
 
+// For User names
 let userName = "";
-
-// For the Your Name form submission
-// const nameForm = document.getElementById("name-form");
-// const userNameInput = document.getElementById("user-name");
-// const changeNameBtn = document.getElementById("change-name-btn");
-// const welcomeMessage = document.querySelector(".welcome-message");
-// //let userName = "";
 
 nameForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const userName = userNameInput.value.trim(); //displays the user when they put their name
+  userName = userNameInput.value.trim(); //displays the user when they put their name
   if (userName) {
     alert(`Welcome to Your Playlist, ${userName}!`); // Alerts and stuff
     welcomeMessage.innerHTML = `Welcome to Your New Playlist, ${userName}!`;
     nameForm.style.display = "none"; // also once logged hide it
     changeNameBtn.style.display = "inline-block"; // Let's change our names, sometimes
     userNameInput.value = ""; //wanted to clear the field was logged
-    // alert("Please enter your name.");
-    // welcomeMessage.innerHTML = `Welcome to Your New Playlist, ${userName}!`;
-    // changeNameBtn.style.display = "inline-block"; // Let's change our names, sometimes
   } else {
     alert("Hey, Please enter your name.");
   }
@@ -352,9 +343,9 @@ updatePlaylist();
 
 const firstSong = playlistElement.firstChild;
 if (firstSong && firstSong.nodeType === 1) {
-  firstSong.style.color = "green";
+  firstSong.style.color = "coral";
 }
-
+// Still need some time with this, its cool so far though !
 const lastSong = playlistElement.lastChild;
 if (lastSong && lastSong.nodeType === 1) {
   const customNote = document.createElement("span");
