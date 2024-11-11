@@ -231,6 +231,14 @@ form.addEventListener("submit", function (event) {
   }
 });
 
+// Razzle Dazzle
+function startBackgroundAnimation() {
+  document.body.classList.add("background-animation");
+  setTimeout(() => {
+    document.body.classList.remove("background-animation");
+  }, 10000); // Remove after 10 seconds
+}
+
 // Handle mood-based playlist shuffle
 moodForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -240,6 +248,8 @@ moodForm.addEventListener("submit", function (event) {
     alert("Please enter a mood.");
     return;
   }
+  //   document.body.classList.remove("background-animation"); // for future use :')
+  startBackgroundAnimation();
 
   try {
     switch (mood) {
@@ -267,6 +277,7 @@ moodForm.addEventListener("submit", function (event) {
         );
         return; // Exit if the mood is invalid
     }
+    document.body.classList.add("background-animation");
 
     updatePlaylist();
     updateSongCount();

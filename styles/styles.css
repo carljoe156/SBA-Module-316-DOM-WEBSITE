@@ -166,6 +166,57 @@ body {
   color: #555;
 }
 
+@keyframes gradient {
+  0% {
+    background: linear-gradient(
+      to right,
+      #ff7e5f,
+      #feb47b
+    ); /* Default gradient change */
+  }
+  25% {
+    background: linear-gradient(
+      to right,
+      #ff9966,
+      #ff5e62
+    ); /* Energetic mood gradient change */
+  }
+  50% {
+    background: linear-gradient(
+      to right,
+      #88d3ce,
+      #6b9c8d
+    ); /* Chill mood gradient change */
+  }
+  75% {
+    background: linear-gradient(
+      to right,
+      #6a11cb,
+      #2575fc
+    ); /* Happy mood gradient change */
+  }
+  100% {
+    background: linear-gradient(
+      to right,
+      #a1c4fd,
+      #c2e9fb
+    ); /* Mindful-demure mood gradient change */
+  }
+}
+
+body {
+  transition: background 2s ease; /* Can help make a smooth transition for background change */
+  background: linear-gradient(
+    to right,
+    #ff7e5f,
+    #feb47b
+  ); /* Defaults back to  background */
+}
+
+.background-animation {
+  animation: gradient 10s ease forwards;
+}
+
 /* Media Queries Section */
 @media screen and (max-width: 480px) {
   h1 {
